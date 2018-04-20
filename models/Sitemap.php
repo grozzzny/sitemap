@@ -60,6 +60,7 @@ class Sitemap extends FastModel implements FastModelInterface
         return [
             [['changefreq', 'loc'], 'string'],
             [['priority'], 'double'],
+            ['loc', 'match', 'pattern' => '/^\/{1}.*$/i', 'message' => Yii::t('app','Value must begin with «/»')],
             ['changefreq', 'default', 'value' => self::CHANGEFREQ_MONTHLY],
             ['priority', 'default', 'value' => self::PRIORITY_50],
             ['status', 'default', 'value' => self::STATUS_OFF],

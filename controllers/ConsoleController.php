@@ -84,7 +84,8 @@ class ConsoleController extends Controller
 
     public function actionStaticPages()
     {
-        unlink(Yii::getAlias('@webroot/'.$this->sitemap_pages));
+        $dir = Yii::getAlias('@webroot/'.$this->sitemap_pages);
+        if(file_exists($dir)) unlink($dir);
 
         $this->install();
 
