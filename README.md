@@ -27,7 +27,7 @@ Add console config
             ]
         ]
     ],
-```php
+```
 
 CRON
 ```bash
