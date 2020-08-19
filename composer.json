@@ -1,14 +1,14 @@
 {
     "name": "grozzzny/sitemap",
-    "description": "Sitemap module for Easyii2CMS",
-    "keywords": ["yii", "easyii2CMS", "CMS", "module"],
+    "description": "Sitemap module for Yii2",
+    "keywords": ["yii", "CMS", "module"],
     "type": "yii2-extension",
     "license": "MIT",
     "authors": [
         {
             "name": "Dmitriy Groznyy",
             "email": "grozzzny@gmail.com",
-            "homepage": "http://pr-kenig.ru"
+            "homepage": "https://pr-kenig.ru"
         }
     ],
     "require": {

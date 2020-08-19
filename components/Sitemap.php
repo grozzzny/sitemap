@@ -5,6 +5,25 @@ use SimpleXMLElement;
 
 class Sitemap
 {
+    const CHANGEFREQ_ALWAYS = 'always';
+    const CHANGEFREQ_HOURLY = 'hourly';
+    const CHANGEFREQ_DAILY = 'daily';
+    const CHANGEFREQ_WEEKLY = 'weekly';
+    const CHANGEFREQ_MONTHLY = 'monthly';
+    const CHANGEFREQ_YEARLY = 'yearly';
+    const CHANGEFREQ_NEVER = 'never';
+
+    const PRIORITY_100 = 1;
+    const PRIORITY_90 = 0.9;
+    const PRIORITY_80 = 0.8;
+    const PRIORITY_70 = 0.7;
+    const PRIORITY_60 = 0.6;
+    const PRIORITY_50 = 0.5;
+    const PRIORITY_40 = 0.4;
+    const PRIORITY_30 = 0.3;
+    const PRIORITY_20 = 0.2;
+    const PRIORITY_10 = 0.1;
+    const PRIORITY_0 = 0;
 
     /**
      * @var string $domain - хранит в себе домен с протоколом
@@ -220,7 +239,7 @@ class Sitemap
             $xml = simplexml_load_file($this->webroot . $path);
             foreach ($value_item AS $url) {
                 $urlset = $xml->addChild('url');
-                $urlset->addChild('loc', $url['loc']);
+                $urlset->addChild('loc', $this->domain . $url['loc']);
                 $urlset->addChild('lastmod', $url['lastmod']);
                 $urlset->addChild('changefreq', $url['changefreq']);
                 $urlset->addChild('priority', $url['priority']);
@@ -234,5 +253,9 @@ class Sitemap
 
     }
 
+    public static function lastmodFormat($time)
+    {
+        return date('Y-m-d', $time);
+    }
 
 }
